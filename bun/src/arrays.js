@@ -1,9 +1,9 @@
-const { logger, generateArrayWithNestedObjects } = require("./utils");
-const { arraySize, iterationsCount } = require("./config");
+import { generateArrayWithNestedObjects, logger } from "./utils.js";
+import { arraySize, iterationsCount } from "./config.js";
 
 const EXP_NAME = "работа с массивами " + `${arraySize / 1000}k`;
 
-function arraysExp(res) {
+export default function arraysExp(res) {
   let totalTime = 0;
 
   for (let i = 0; i < iterationsCount; i++) {
@@ -30,5 +30,3 @@ function arraysExp(res) {
 
   res();
 }
-
-module.exports = arraysExp;

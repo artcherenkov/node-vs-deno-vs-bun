@@ -1,8 +1,8 @@
-const { promisify } = require("./utils");
+import { promisify } from "./src/utils.js";
 
-const fibonacciExp = require("./fibonacci");
-const arraysExp = require("./arrays");
-const asyncTasksExp = require("./async");
+import fibonacciExp from "./src/fibonacci.js";
+import arraysExp from "./src/arrays.js";
+import asyncTasksExp from "./src/async.js";
 
 (async function run() {
   await promisify(arraysExp);

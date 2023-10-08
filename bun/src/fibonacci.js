@@ -1,5 +1,5 @@
-const { logger } = require("./utils");
-const { fibCount, iterationsCount } = require("./config");
+import { logger } from "./utils.js";
+import { fibCount, iterationsCount } from "./config.js";
 
 const EXP_NAME = `числа Фибоначчи ${fibCount}`;
 
@@ -8,7 +8,7 @@ function fibonacci(n) {
   return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
-function fibonacciExp(res) {
+export default function fibonacciExp(res) {
   let totalTime = 0;
 
   for (let i = 0; i < iterationsCount; i++) {
@@ -28,5 +28,3 @@ function fibonacciExp(res) {
 
   res();
 }
-
-module.exports = fibonacciExp;

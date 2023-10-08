@@ -1,4 +1,4 @@
-const { currentRuntime, arraySize } = require("./config");
+import { arraySize, currentRuntime } from "./config.js";
 
 function getRandomString(length) {
   const characters =
@@ -29,7 +29,7 @@ function generateNestedObject(depth = 1) {
   return object;
 }
 
-function generateArrayWithNestedObjects() {
+export function generateArrayWithNestedObjects() {
   const array = [];
   for (let i = 0; i < arraySize; i++) {
     array.push(generateNestedObject(3));
@@ -38,15 +38,8 @@ function generateArrayWithNestedObjects() {
   return array;
 }
 
-const promisify = (fn) => new Promise(fn);
+export const promisify = (fn) => new Promise(fn);
 
-const logger = (expName, log) => {
+export const logger = (expName, log) => {
   console.log(`[${currentRuntime}]`, `[${expName}]`, log);
-};
-
-module.exports = {
-  generateNestedObject,
-  generateArrayWithNestedObjects,
-  promisify,
-  logger,
 };

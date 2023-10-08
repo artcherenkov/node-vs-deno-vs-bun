@@ -1,0 +1,7 @@
+FROM denoland/deno:1.10.3
+
+WORKDIR /usr/src/app
+
+COPY deno/ .
+
+CMD ["deno", "run", "--allow-env", "index.js"]

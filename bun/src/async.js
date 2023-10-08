@@ -1,5 +1,6 @@
-const { iterationsCount, asyncTasksCount } = require("./config");
-const { logger } = require("./utils");
+import { asyncTasksCount, iterationsCount } from "./config.js";
+import { logger } from "./utils.js";
+
 let totalTime = 0;
 
 const EXP_NAME = `асинхронные задачи ${asyncTasksCount / 1000}к`;
@@ -9,7 +10,7 @@ function asyncTask() {
   return new Promise((resolve) => setTimeout(resolve, 50));
 }
 
-async function asyncTasksExp() {
+export default async function asyncTasksExp() {
   for (let i = 0; i < iterationsCount; i++) {
     const promises = [];
     // Создание массива из 1000 промисов
@@ -30,5 +31,3 @@ async function asyncTasksExp() {
     `Среднее время выполнения: ${(totalTime / iterationsCount).toFixed(2)} мс.`
   );
 }
-
-module.exports = asyncTasksExp;
