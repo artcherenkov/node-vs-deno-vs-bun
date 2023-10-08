@@ -2,6 +2,6 @@ FROM oven/bun:latest
 
 WORKDIR /usr/src/app
 
-COPY bun/ .
+COPY bun-and-node/ .
 
 CMD ["bun", "index.js"]
